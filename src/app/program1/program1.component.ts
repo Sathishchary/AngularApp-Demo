@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Hero } from '../models/hero';
 
 @Component({
   selector: 'app-program1',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./program1.component.css']
 })
 export class Program1Component implements OnInit {
-  selectedHero: any;
-  heroes: any;
+  selectedHero: Hero;
+  heroes: Hero[];
   heroname = '';
   constructor() {
     this.heroes = [
