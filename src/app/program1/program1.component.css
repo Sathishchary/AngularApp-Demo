@@ -1,0 +1,14 @@
+.tableCss{
+    border: 1px solid;
+    margin-top: 42px;
+    position: relative;
+    top: -36px;
+}
+.heroes{
+    border: 1px solid black;
+     font-weight:bold; 
+     cursor: pointer
+}
+.heading{
+    font-weight: 600; text-align: center
+}

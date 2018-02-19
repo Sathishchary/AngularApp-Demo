@@ -1,0 +1,27 @@
+<div class="heading">All Heroes Information </div>
+<div class="col-xs-12">
+  <div class="row">
+  <div class="col-sm-3">
+      <ng-container *ngFor="let hero of heroes">
+        <div class="heroes" [ngStyle]="{'background-color':heroname === hero.name ? 'green' : '' }"
+         (click)="showHero(hero)">{{hero.name | uppercase}}</div>
+      </ng-container>
+  </div>
+  <div class="col-sm-7 tableCss" *ngIf="selectedHero">
+    <table class="table">
+      <thead>
+        <th>Hero id</th>
+        <th>Hero name</th>
+        <th>Hero designation</th>
+      </thead>
+      <tbody>
+          <tr>
+            <td>{{selectedHero.id}}</td>
+            <td>{{selectedHero.name}}</td>
+            <td>{{selectedHero.designation}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
