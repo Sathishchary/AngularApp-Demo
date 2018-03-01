@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../models/hero';
 
+import { HeroService } from '../hero.service';
+
 @Component({
   selector: 'app-program1',
   templateUrl: './program1.component.html',
@@ -10,7 +12,7 @@ export class Program1Component implements OnInit {
   selectedHero: Hero;
   heroes: Hero[];
   heroname = '';
-  constructor() {
+  constructor(public heroService: HeroService) {
     this.heroes = [
       { id: 1, name: 'kotha', designation: 'junior software' },
       { id: 2, name: 'chary', designation: 'hardware' },
@@ -25,6 +27,7 @@ export class Program1Component implements OnInit {
   }
 
   ngOnInit() {
+    alert(this.heroService.heroMessage);
   }
 
 }

@@ -7,12 +7,44 @@
 <!-- <h2>Assignment Example Program</h2>
 <app-program1></app-program1>
  -->
+<!-- <div style="float: right">
+    <button class="btn btn-primary" (click)="showEventBinding()">EventBinding</button>
+    <button class="btn btn-success" (click)="showLifeCycleHooks()">LifeCyclePage</button>
+</div> -->
+<!-- <div *ngIf="eventBinding">
+    <h2 style="text-align: center"> Events binding example</h2>
+    <div style="text-align: center">
+        <app-events></app-events>
+    </div>
+</div>
+<div *ngIf="lifeCycleHook">
+    <h2 style="text-align: center"> Life cycle hook methods</h2>
+    <div style="text-align: center">
+        <app-lifecyle></app-lifecyle>
+    </div>
+</div> -->
 
-<h2> Events binding example</h2>
+<!-- 
+<h2 style="text-align: center"> Directive Example</h2>
 <div style="text-align: center">
-<app-events></app-events>
+<app-color></app-color>
+</div> -->
+
+<!-- <h2 style="text-align: center">Services </h2>
+<div style="text-align: center">
+    <app-serviceexample></app-serviceexample>
+</div> -->
+
+<!-- <h2>component interaction</h2> -->
+
+<div style="text-align: center">
+<button (click)="prgram()">ProgramButton</button>
+<!-- <app-parent></app-parent> -->
+<app-serviceexample ></app-serviceexample>
 </div>
 
+<app-program1 *ngIf="programExample"></app-program1>
 
 
-    
+
+

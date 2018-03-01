@@ -3,17 +3,17 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-events',
   template: `
-   <button (click)="onClickMe()">Click me!</button>
+   <button appHighlight (click)="onClickMe()">Click me!</button>
    {{clickMessage}}
 
-   <button (click)="onClickMe2($event)">No! .. Click me!</button>
+   <button (click)="onClickMe2('sathish')">No! .. Click me!</button>
    {{clickMessage2}}
 
    <h4>Give me some keys!</h4>
    key up <input (keyup)="onKey($event)"> <p>{{values}}</p>
 
    <h4>Give me some keys!</h4>
-   <input #box (keyup)="onKeyValue(box.value)"><p>{{keyValues}}</p>
+   <input #sathish (keyup)="onKeyValue(sathish)"><p>{{keyValues}}</p>
 
 
    <h4>Type away! Press [enter] when done.</h4>
@@ -22,7 +22,7 @@ import { Component, OnInit } from '@angular/core';
    <h4> enter and blur method</h4>
    <input #blu (keyup.enter)="update(blu.value)" (blur)="update(blu.value)"> <p>{{blurValue}}</p>
 
-   <h4> key up and click method ways</h4>
+   <!--    <h4> key up and click method ways</h4>
    <input #keyUpp (keyup)="0"> <p>{{keyUpp.value}}</p>
    <button on-click="onSave()">on-Save</button>
    <button (click)="onSave()">onSave</button>
@@ -33,7 +33,7 @@ import { Component, OnInit } from '@angular/core';
    <input #newHero (keyup.enter)="addHero(newHero.value)"  (blur)="addHero(newHero.value); newHero.value=' '">
    <button (click)="addHero(newHero.value)">Add</button>
     <div *ngFor="let hero of heroes">{{hero}}</div>
-
+-->
    `
   ,
   styleUrls: ['./events.component.css']
@@ -54,24 +54,24 @@ export class EventsComponent {
   onClickMe() {
     this.clickMessage = 'You are my hero!';
   }
-  onClickMe2(event: any) {
-    const evtMsg = event ? ' Event target is ' + event.target.tagName : '';
-    this.clickMessage = (`Click #${this.clicks++}. ${evtMsg}`);
+  onClickMe2(event: string) {
+
+   // const evtMsg = event ? ' Event target is ' + event.target.tagName : '';
+    // this.clickMessage = (`Click #${this.clicks++}. ${evtMsg}`);
+    this.clickMessage2 = event;
   }
 
   /*key up component*/
-  /*
- onKey(event: any) { // without event type info
+/* onKey(event: any) { // without event type info
    this.values += event.target.value + ' | ';
- }
- */
+  // this.values = this.values + event.target.value + ' | ';
+ } */
 
   onKey(event: KeyboardEvent) { // with keyboard event type info
     this.values += (<HTMLInputElement>event.target).value + ' | ';
   }
-
-  onKeyValue(value: string) {  // here value is string
-    this.keyValues += value + ' | ';
+  onKeyValue(event: any) {  // here value is string
+    this.keyValues += event.value + ' | ';
   }
 
   onEnter(value: string) { this.value = value; }

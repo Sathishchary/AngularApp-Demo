@@ -1,6 +1,7 @@
 <div class="heading">All Heroes Information </div>
 <div class="col-xs-12">
   <div class="row">
+
   <div class="col-sm-3">
       <ng-container *ngFor="let hero of heroes">
         <div class="heroes" [ngStyle]="{'background-color':heroname === hero.name ? 'green' : '' }"
@@ -25,3 +26,5 @@
   </div>
 </div>
 </div>
+
+
