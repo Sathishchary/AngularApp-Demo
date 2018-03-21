@@ -1,9 +1,18 @@
 
+
+<style>
+    .css{
+      background: red;
+    }
+    .cssFalse{
+      background: navajowhite;
+    }
+  </style>
 <h2 style="background:lightblue"> custom component</h2>
 <app-custom></app-custom>
 
 <h2 style="background:lightblue">App component </h2>
-<h1> Hello {{title}}</h1>
+<h1 [class.cssFalse]="false" class="css"> Hello {{title}}</h1>
   <h2>My favorite hero is: {{selectedhero.name}} {{selectedhero.designation}}</h2>
 
   <p [style.font-size.px]="40">Heroes:</p>
