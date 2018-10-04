@@ -23,10 +23,12 @@
         <app-lifecyle></app-lifecyle>
     </div>
 </div> -->
+<p><strong>{{idleState}}</strong></p>
+<p *ngIf="lastPing"><small>Last keepalive ping <strong>{{lastPing | amTimeAgo}}</strong></small></p>
+<button (click)="reset()" *ngIf="timedOut">Restart</button>
 
-
-<h2 style="text-align: center"> Directive Example</h2>
-<div style="text-align: center">
+<h2 *ngIf="!timedOut" style="text-align: center"> Directive Example</h2>
+<div *ngIf="!timedOut" style="text-align: center">
 <app-color></app-color>
 </div>
 
@@ -36,7 +38,7 @@
 </div> -->
 
 <!-- <h2>component interaction</h2> -->
-<!-- 
+<!--
 <div style="text-align: center">
 <button (click)="prgram()">ProgramButton</button>
 <!-- <app-parent></app-parent> -->

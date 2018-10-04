@@ -17,10 +17,14 @@ import { StructuralComponent } from './structural/structural.component';
 import { HeroService } from './hero.service';
 import { ParentComponent } from './componentinteraction/parent/parent.component';
 import { ChildComponent } from './componentinteraction/child/child.component';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+import { MomentModule } from 'angular2-moment';
 
 @NgModule({
   imports: [
-    BrowserModule, FormsModule, HttpClientModule
+    BrowserModule, FormsModule, HttpClientModule,
+    MomentModule,
+    NgIdleKeepaliveModule.forRoot()
   ],
   declarations: [
     AppComponent, CustomComponent, Program1Component, EventsComponent, StyleProgramComponent,
